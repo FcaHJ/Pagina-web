@@ -1,0 +1,103 @@
+.body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(rgb(51, 51, 51),#d1e2e2);
+}
+#donde-esta{
+    background-color: gray;
+    border: inset;
+    border-color: aliceblue;
+}
+#donde-esta:hover{
+    background-color: black;
+}
+.contenedor{
+    margin-left: auto;
+    margin-right: auto;
+}
+.contenedor2{
+    margin: 10%;
+}
+.contenedor3{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.contenido{
+    margin-bottom: 2%;
+}
+.contenido2{
+    align-items: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    
+}
+.texto-home{
+    padding: 4%;
+    text-align: center;
+}
+.texto-sobreNosotros{
+    color: aliceblue;
+}
+.titulo-termCon{
+    text-align: center;
+}
+.texto{
+    text-align: justify;
+}
+.btn{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+#btn-login{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#btn-sn{
+    width: 30%;
+}
+#division{
+    text-align: center;
+}
+.img-sobreNosotros{
+    width: 50%;
+    display: block;
+    margin: auto;
+    border-style: solid;
+    border-color: rgb(51, 51, 51) ;
+    border-radius:1%;
+}
+.card-index{
+    display: inline-block;
+    margin: 4%;
+    border-radius: 20px;
+}
+.card-producto{
+    margin: 8%;
+    display: inline-block;
+    border-color: rgb(83, 83, 83);
+}
+.card2{
+    padding: 1cm;
+}
+.hr{
+    color: black;
+}
+.lista{
+    text-align: justify;
+    font-weight: 500;
+    font-size: large;
+}
+.pie-pagina{
+    width: 100%;
+    padding: 2%;
+    margin-top: auto;
+    text-align: center; 
+}
+#terminosCondiciones:hover{
+    font-size: large;
+}
