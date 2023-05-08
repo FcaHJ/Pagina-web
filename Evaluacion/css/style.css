@@ -2,15 +2,18 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: linear-gradient(rgb(51, 51, 51),#d1e2e2);
+    background: linear-gradient(rgb(241, 128, 133),#a990d8);
+}
+#barra-nav{
+    background-color: rgb(155, 34, 34);
 }
 #donde-esta{
-    background-color: gray;
+    background-color: rgb(247, 85, 85);
     border: inset;
-    border-color: aliceblue;
+    border-color: rgb(235, 166, 204);
 }
 #donde-esta:hover{
-    background-color: black;
+    background-color: rgb(184, 51, 51);
 }
 .contenedor{
     margin-left: auto;
@@ -76,7 +79,7 @@
     display: block;
     margin: auto;
     border-style: solid;
-    border-color: rgb(51, 51, 51) ;
+    border-color: rgb(151, 194, 231) ;
     border-radius:1%;
 }
 .card-index{
@@ -87,7 +90,7 @@
 .card-producto{
     margin: 8%;
     display: inline-block;
-    border-color: rgb(83, 83, 83);
+    border-color: rgb(166, 203, 235);
 }
 .card2{
     padding: 1cm;
