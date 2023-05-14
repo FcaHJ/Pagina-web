@@ -7,6 +7,8 @@
     <title>FondCandy - Registro</title>
     <link rel="icon" href="imagenes/Logo-FondCandy.png">
 
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+	  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -28,36 +30,80 @@
     </nav>
   </header>
 
+  <main>
     <div class="contenido2">
-        <form id="formulario">
-              <div class="mb-3">
-                <label for="" class="form-label" id="info-login">Nombre de usuario</label>
-                <input type="text"
-                  class="form-control" name="" id="" aria-describedby="helpId" placeholder="Andrea">
+        <form class="formulario" id="formulario">
+
+          _    <!--NOMBRE DE USUARIO-->
+              <div class="formulario__grupo mb-3" id="grupo__usuario">
+                <label for="usuario" class="formulario__label" id="info-login">Nombre de usuario</label>
+                <div class="formulario__grupo-input">
+                <input type="text" class="formulario__input" name="usuario" id="usuario" aria-describedby="helpId" placeholder="Andrea125">
+                <i class="formulario__validacion-estado fas fa-time-circle"></i>
+                </div>
+                <p class="formulario__input-error">El usuario debe tener de 4 a 16 dígitos y solo debe contener letras, números y guiones</p>
               </div>
+              <!--EDAD-->
               <div class="mb-3">
                 <label for="" class="form-label" id="info-login">Edad</label>
-                <select class="form-select form-select-lg" name="" id="">
+                <select class="form-select form-select-lg" name="edad" id="edad" required>
                   <option selected>Selecciona</option>
-                  <option value="">16-18</option>
-                  <option value="">19-25</option>
-                  <option value="">26-30</option>
-                  <option value="">Más de 30</option>
+                  <option value="1">Menos de 16</option>
+                  <option value="2">16-18</option>
+                  <option value="3">19-25</option>
+                  <option value="4">26-30</option>
+                  <option value="5">Más de 30</option>
                 </select>
               </div>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label" id="info-login">Correo electrónico</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="abc@gmail.com">
+              <!--CORREO-->
+              <div class="formulario__grupo" id="grupo__correo">
+                <label for="correo" class="formulario__label" id="info-login">Correo electrónico</label>
+                <div class="formulario__grupo-input">
+                <input type="email" class="formulario__input" name="correo" id="correo" aria-describedby="emailHelp" placeholder="abc@gmail.com">
+                <i class="formulario__validacion-estado fas fa-time-circle"></i>
+                </div>
+                <p class="formulario__input-error">El correo esta mal arreglaloooooo</p>
               </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label" id="info-login">Crear contraseña</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+              <!--CONTRASEÑA-->
+              <div class="formulario__grupo mb-3" id="grupo__password">
+                <label for="password1" class="formulario__label" id="info-login">Crear contraseña</label>
+                <div class="formulario__grupo-input">
+                <input type="password" class="formulario__input" name="password" id="password1">
+                <i class="formulario__validacion-estado fas fa-time-circle"></i>
+                </div>
+                <p class="formulario__input-error">La contraseña no es valida</p>
               </div>
-              <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input " id="Check1" checked>
-                <label class="form-check-label" for="Check1" id="info-login">Recibir información al correo</label>
+              /*
+              <!--CONFIRMACION CONTRASEÑA-->
+              <div class="formulario__grupo mb-3" id="grupo__password2">
+                <label for="password2" class="formulario__label" id="info-login">Confirmar contraseña</label>
+                <div class="formulario__grupo-input">
+                <input type="password" class="formulario__input" name="password2" id="password2">
+                <i class="formulario__validacion-estado fas fa-time-circle"></i>
+                </div>
+                <p class="formulario__input-error">Las contraseñas no son iguales!</p>
               </div>
-              <button type="submit" class="btn btn-dark" id="btn-registro">Registrarse</button>
+              
+              <!--CHECK INFORMACION CORREO-->
+              <div class="formulario__grupo mb-3" id="formulario__mensaje">
+                <input type="checkbox" class="formulario__input" name="info-correo" id="Check1">
+                <label class="formulario__label" for="Check1" id="info-login">Recibir información al correo</label>
+              </div>
+
+              <!--CHECK TERMINOS-->
+              <div class="formulario__grupo mb-3" id="grupo__terminos">
+                <input type="checkbox" class="formulario__checkbox" name="terminos" id="terminos">
+                <label class="formulario__label" for="Check2" id="info-login">Acepto <a href="TermyCond.html" class="link-dark">Terminos y Condiciones</a></label>
+              </div>
+
+              <div class="formulario__mensaje" id="formulario__mensaje">
+                <p><i class="fas fa-exclamation-triangle"><b>Error:</b>Por favor rellena el formulario correctamente</i></p>
+              </div>
+
+              <div class="formulario__grupo formulario__grupo-btn-enviar">
+                <button type="submit" class="formulario__btn" id="btn-registro">Registrarse</button>
+                <p class="formulario__mensaje-exito" id="formulario_mensaje-exito">Formulario enviado exitosamente!</p>
+              </div>
             </form>
       
     </div>
@@ -75,5 +121,7 @@
 
     <script src="js/script.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+  </main>
 </body>
 </html>

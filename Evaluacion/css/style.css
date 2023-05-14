@@ -4,6 +4,8 @@
     min-height: 100vh;
     background: linear-gradient(rgb(241, 128, 133),#a990d8);
 }
+
+/*BARRA DE NAVEGACIÓN*/
 #barra-nav{
     background-color: rgb(155, 34, 34);
 }
@@ -13,48 +15,50 @@
 .logo{
     width: 40px;
 }
-.contenedor{
-    margin-left: auto;
-    margin-right: auto;
+
+/*INICIO*/
+.contenido{
+    margin-bottom: 2%;
 }
-.contenedor2{
-    margin: 10%;
+.texto-home{
+    padding: 4%;
+    text-align: center;
 }
+.card-index{
+    display: inline-block;
+    margin: 4%;
+    border-radius: 20px;
+}
+/*SOBRE NOSOTROS*/
 .contenedor3{
     margin-top: 2%;
     margin-bottom: 2%;
     margin-left: 15%;
     margin-right: 15%;
 }
-.contenido{
-    margin-bottom: 2%;
-}
-.contenido2{
-    align-items: center;
-    margin-left: 20%;
-    margin-right: 20%; 
-}
-#formulario{
-    margin: 10%;
-    padding: 5%;
-    color: aliceblue;
-}
-#Check1:checked{
-    background-color: rgb(155, 34, 34);
-    border: #d1e2e2;
-}
-.texto-home{
-    padding: 4%;
-    text-align: center;
-}
 .texto-sobreNosotros{
     color: aliceblue;
 }
-.titulo-termCon{
-    text-align: center;
+#btn-sn{
+    width: 30%;
 }
-.texto{
-    text-align: justify;
+.img-sobreNosotros{
+    width: 50%;
+    display: block;
+    margin: auto;
+    border-style: solid;
+    border-color: rgb(151, 194, 231) ;
+    border-radius:1%;
+}
+/*PRODUCTOS*/
+.contenedor{
+    margin-left: auto;
+    margin-right: auto;
+}
+.card-producto{
+    margin: 8%;
+    display: inline-block;
+    border-color: rgb(166, 203, 235);
 }
 .btn{
     background-color: rgb(155, 34, 34);
@@ -65,49 +69,22 @@
 .btn:hover{
     background-color: rgb(105, 22, 22);
 }
-#info-login{
-    color: black;
-}
-#btn-login{
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-}
-#btn-sn{
-    width: 30%;
+.lista{
+    text-align: justify;
+    font-weight: 500;
+    font-size: large;
 }
 #division{
     text-align: center;
 }
-.img-sobreNosotros{
-    width: 50%;
-    display: block;
-    margin: auto;
-    border-style: solid;
-    border-color: rgb(151, 194, 231) ;
-    border-radius:1%;
-}
-.card-index{
-    display: inline-block;
-    margin: 4%;
-    border-radius: 20px;
-}
-.card-producto{
-    margin: 8%;
-    display: inline-block;
-    border-color: rgb(166, 203, 235);
-}
+/**/
 .card2{
     padding: 1cm;
 }
 .hr{
     color: black;
 }
-.lista{
-    text-align: justify;
-    font-weight: 500;
-    font-size: large;
-}
+/*PIE DE PAGINA*/
 .pie-pagina{
     background-color: rgb(155, 34, 34);
     width: 100%;
@@ -117,4 +94,138 @@
 }
 #terminosCondiciones:hover{
     font-size: large;
+}
+/*TERMINOS Y CONDICIONES*/
+.contenedor2{
+    margin: 10%;
+}
+.titulo-termCon{
+    text-align: center;
+}
+.texto{
+    text-align: justify;
+}
+/*FORMULARIO LOGIN*/
+.contenido2{
+    align-items: center;
+    margin-left: 20%;
+    margin-right: 20%; 
+}
+#info-login{
+    color: black;
+    font-family: cursive;
+}
+#btn-registro{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#formulario{
+    margin: 10%;
+    padding: 5%;
+    color: aliceblue;
+}
+.formulario__grupo-input{
+    position: relative;
+}
+.formulario__input:focus{
+    border: 3px solid #0075FF;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+.formulario__input-error{
+    color: #bb2929;
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+}
+.formulario_btn{
+    background-color: rgb(155, 34, 34);
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+.formulario_btn:hover{
+    background-color: rgb(105, 22, 22);
+}
+.formulario__input-error-activo{
+    display: block;
+}
+.formulario__validacion-estado{
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
+}
+.formulario__grupo-teminos,
+.formulario__mensaje,
+.formulario__grupo-btn-enviar{
+    grid-column: span 2;
+}
+
+.formulario__mensaje{
+    height: 45px;
+    line-height: 45px;
+    background: #f66060;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+}
+.formulario__mensaje p{
+    margin: 0;
+}
+.formulario__label{
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;
+}
+.formulario__mensaje-activo{
+    display: block;
+}
+
+/****ESTILOS DE VALIDACION****/
+.formulario__mensaje-exito{
+    font-size: 14px;
+    color: #119200;
+    display: none;
+}
+.formulario__mensaje-exito-activo{
+    display: block;
+}
+.formulario__grupo-correcto .formulario__validacionEstado{
+    color: #1ed12d;
+}
+.formulario__grupo-incorrecto .formulario__label{
+    color: #bb2929;
+}
+.formulario__grupo-incorrecto .formulario__validacionEstado{
+    color: #bb2929;
+    opacity: 1;
+}
+.formulario__grupo-incorrecto .formulario__input{
+    border: 3px solid #bb2929;
+}
+
+#Check1:checked{
+    background-color: rgb(155, 34, 34);
+    border: #d1e2e2;
+}
+
+/* ----- -----  Mediaqueries ----- ----- */
+@media screen and (max-width: 800px) {
+	.formulario {
+		grid-template-columns: 1fr;
+	}
+
+	.formulario__grupo-terminos, 
+	.formulario__mensaje,
+	.formulario__grupo-btn-enviar {
+		grid-column: 1;
+	}
+
+	.formulario__btn {
+		width: 100%;
+	}
 }
