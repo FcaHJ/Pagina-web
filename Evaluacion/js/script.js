@@ -1,3 +1,5 @@
+/* FORMULARIO - REGISTRO */
+
 const form = document.getElementById('form');
 const usuario = document.getElementById('username');
 const email = document.getElementById('email');
@@ -18,13 +20,15 @@ function checkInputs() {
 	const password2Value = password2.value;
 	
 	if(usuarioValue === '') {
-		setErrorFor(usuario, '⚠ Ingrese usuario');
-	} else {
+		setErrorFor(usuario, '⚠ Debe ingresar un usuario');
+	} else if (!isUser(usuarioValue)) {
+        setErrorFor(usuario, "⚠ El usuario debe contener letras, numeros y/o guiones - _");
+    } else {
 		setSuccessFor(usuario);
 	}
 	
 	if(emailValue === '') {
-		setErrorFor(email, '⚠ Ingrese correo');
+		setErrorFor(email, '⚠ Debe ingresar un correo');
 	} else if (!isEmail(emailValue)) {
 		setErrorFor(email, '⚠ Ingrese un correo valido');
 	} else {
@@ -32,13 +36,13 @@ function checkInputs() {
 	}
 	
 	if(passwordValue === '') {
-		setErrorFor(password, '⚠ Ingresa contraseña');
+		setErrorFor(password, '⚠ Ingrese una contraseña');
 	} else {
 		setSuccessFor(password);
 	}
 	
 	if(password2Value === '') {
-		setErrorFor(password2, '⚠ Ingresa contraseña');
+		setErrorFor(password2, '⚠ Ingrese una contraseña');
 	} else if(passwordValue !== password2Value) {
 		setErrorFor(password2, '⚠ Las contraseñas no coinciden');
 	} else{
@@ -56,6 +60,10 @@ function setErrorFor(input, message) {
 function setSuccessFor(input) {
 	const formControl = input.parentElement;
 	formControl.className = 'form-controle success';
+}
+
+function isUser(usuario){
+    return /^[a-zA-Z0-9\_\-]{4,16}$/.test(usuario);
 }
 
 function isEmail(email) {

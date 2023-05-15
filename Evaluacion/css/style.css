@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: linear-gradient(rgb(241, 128, 133),#a990d8);
+    background: linear-gradient(rgb(241, 128, 133),#b59fdd);
 }
 
 /*BARRA DE NAVEGACIÓN*/
@@ -13,6 +13,19 @@
 }
 #navbarNav{
     color: white;
+}
+#submenu{
+    background-color: rgb(189, 53, 53);
+}
+.dropdown-item{
+    color: #fff;
+}
+.nav-link{
+    font-weight: bold;
+    color: #fff;
+}
+.nav-link:hover{
+    color: rgb(222, 135, 135);
 }
 .logo{
     width: 40px;
@@ -61,6 +74,9 @@
     margin: 8%;
     display: inline-block;
     border-color: rgb(166, 203, 235);
+}
+.card-img-top{
+    height: 9rem;
 }
 .btn{
     background-color: rgb(155, 34, 34);
