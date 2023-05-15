@@ -1,99 +1,63 @@
-/*document.addEventListener("DOMContentLoaded", function(){
-    document.getElementById("formulario").addEventListener('submit', validarFormulario)
-})*/
+const form = document.getElementById('form');
+const usuario = document.getElementById('username');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const password2 = document.getElementById('password2');
 
-const formulario = document.getElementById('formulario');
-const inputs = document.querySelectorAll('#formulario input');
-
-const expresiones = {
-	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
-	password: /^.{4,12}$/, // 4 a 12 digitos.
-	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-}
-
-const campos ={
-    usuario:false,
-    correo:false,
-    password:false
-}
-
-const validarFormulario = (e) => {
-    switch(e.target.name){
-        case "usuario":
-            validarCampo(expresiones.usuario, e.target, 'usuario');
-        break;
-        case "correo":
-            validarCampo(expresiones.correo, e.target, 'correo');
-        break;
-        case "password":
-            validarCampo(expresiones.password, e.target, 'password');
-            validarPassword2();
-        break;
-        case "password2":
-            validarPassword2();
-        break;
-    }
-}
-
-const validarCampo = (expresion, input, campo) => {
-    if(expresion.test(input.value)){
-        document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
-        document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
-        document.querySelector(`grupo__${campo} i`).classList.remove('fa-time-circle');
-        document.querySelector(`grupo__${campo} i`).classList.add('fa-check-circle');
-        document.querySelector(`grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
-    }else{
-        document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
-        document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
-        document.querySelector(`grupo__${campo} i`).classList.add('fa-time-circle');
-        document.querySelector(`grupo__${campo} i`).classList.remove('fa-check-circle');
-        document.querySelector(`grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
-    }
-}
-
-const validarPassword2 = () => {
-    const inputPassword1 = document.getElementById('password');
-    const inputPassword2 = document.getElementById('password2');
-
-    if(inputPassword1.value != inputPassword2.value){
-        document.getElementById(`grupo__password2`).classList.add('formulario__grupoIncorrecto');
-        document.getElementById(`grupo__password2`).classList.remove('formulario__grupoCorrecto');
-        document.querySelector(`grupo__password2 i`).classList.add('fa-times-circle');
-        document.querySelector(`grupo__password2 i`).classList.remove('fa-check-circle');
-        document.querySelector(`grupo__password2 .formulario__inputError`).classList.add('formulario_inputError-activo');
-        campos['password'] = false;
-    }else{
-        document.getElementById(`grupo__password2`).classList.remove('formulario__grupoIncorrecto');
-        document.getElementById(`grupo__password2`).classList.add('formulario__grupoCorrecto');
-        document.querySelector(`grupo__password2 i`).classList.remove('fa-times-circle');
-        document.querySelector(`grupo__password2 i`).classList.add('fa-check-circle');
-        document.querySelector(`grupo__password2 .formulario__inputError`).classList.remove('formulario_inputError-activo');
-        campos['password'] = true;
-    }
-}
-
-inputs.forEach(input => {
-    input.addEventListener('keyup', validarFormulario)
-    input.addEventListener('blur', validarFormulario)
+form.addEventListener('submit', e => {
+	e.preventDefault();
+	
+	checkInputs();
 });
 
-formulario.addEventListener('submit', (e) => {
-    e.preventDefault();
+function checkInputs() {
+	// trim to remove the whitespaces
+	const usuarioValue = usuario.value;
+	const emailValue = email.value;
+	const passwordValue = password.value;
+	const password2Value = password2.value;
+	
+	if(usuarioValue === '') {
+		setErrorFor(usuario, '⚠ Ingrese usuario');
+	} else {
+		setSuccessFor(usuario);
+	}
+	
+	if(emailValue === '') {
+		setErrorFor(email, '⚠ Ingrese correo');
+	} else if (!isEmail(emailValue)) {
+		setErrorFor(email, '⚠ Ingrese un correo valido');
+	} else {
+		setSuccessFor(email);
+	}
+	
+	if(passwordValue === '') {
+		setErrorFor(password, '⚠ Ingresa contraseña');
+	} else {
+		setSuccessFor(password);
+	}
+	
+	if(password2Value === '') {
+		setErrorFor(password2, '⚠ Ingresa contraseña');
+	} else if(passwordValue !== password2Value) {
+		setErrorFor(password2, '⚠ Las contraseñas no coinciden');
+	} else{
+		setSuccessFor(password2);
+	}
+}
 
-    const terminos = document.getElementById('terminos');
-    if(campos.usuario && campos.password && campos.correo && terminos.checked){
-        formulario.reset();
+function setErrorFor(input, message) {
+	const formControl = input.parentElement;
+	const small = formControl.querySelector('small');
+	formControl.className = 'form-controle error';
+	small.innerText = message;
+}
 
-        document.getElementById('formulario__mensaje-extito').classList.add('formulario__mensaje-exito-activo');
-        setTimeout(() => {
-            document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-        }, 5000);
+function setSuccessFor(input) {
+	const formControl = input.parentElement;
+	formControl.className = 'form-controle success';
+}
 
-        document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
-            icono.classList.remove('formulario__grupo-correcto');
-        });
-
-    }else{
-        document.getElementById('forulario__mensaje').classList.add('formulario__mensaje-activo');
-    }
-});
+function isEmail(email) {
+	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}

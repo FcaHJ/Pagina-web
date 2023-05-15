@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
 .body{
     display: flex;
     flex-direction: column;
@@ -106,126 +108,108 @@
     text-align: justify;
 }
 /*FORMULARIO LOGIN*/
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+
+
 .contenido2{
+    margin: 1rem;
     align-items: center;
     margin-left: 20%;
     margin-right: 20%; 
 }
-#info-login{
-    color: black;
-    font-family: cursive;
-}
-#btn-registro{
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-}
-#formulario{
-    margin: 10%;
-    padding: 5%;
-    color: aliceblue;
-}
-.formulario__grupo-input{
-    position: relative;
-}
-.formulario__input:focus{
-    border: 3px solid #0075FF;
-    outline: none;
-    box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
-}
-.formulario__input-error{
-    color: #bb2929;
-    font-size: 12px;
-    margin-bottom: 0;
-    display: none;
-}
-.formulario_btn{
-    background-color: rgb(155, 34, 34);
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-}
-.formulario_btn:hover{
-    background-color: rgb(105, 22, 22);
-}
-.formulario__input-error-activo{
-    display: block;
-}
-.formulario__validacion-estado{
-    position: absolute;
-    right: 10px;
-    bottom: 15px;
-    z-index: 100;
-    font-size: 16px;
-    opacity: 0;
-}
-.formulario__grupo-teminos,
-.formulario__mensaje,
-.formulario__grupo-btn-enviar{
-    grid-column: span 2;
+.titulo-reg{
+    color: rgb(122, 122, 122);
+    text-align: center;
 }
 
-.formulario__mensaje{
-    height: 45px;
-    line-height: 45px;
-    background: #f66060;
-    padding: 0 15px;
-    border-radius: 3px;
-    display: none;
-}
-.formulario__mensaje p{
-    margin: 0;
-}
-.formulario__label{
-    font-weight: 700;
-    padding: 10px;
-    cursor: pointer;
-}
-.formulario__mensaje-activo{
-    display: block;
+.header {
+	border-bottom: 1px solid #f0f0f0;
+	background-color: #f7f7f7;
+	padding: 20px 40px;
 }
 
-/****ESTILOS DE VALIDACION****/
-.formulario__mensaje-exito{
-    font-size: 14px;
-    color: #119200;
-    display: none;
-}
-.formulario__mensaje-exito-activo{
-    display: block;
-}
-.formulario__grupo-correcto .formulario__validacionEstado{
-    color: #1ed12d;
-}
-.formulario__grupo-incorrecto .formulario__label{
-    color: #bb2929;
-}
-.formulario__grupo-incorrecto .formulario__validacionEstado{
-    color: #bb2929;
-    opacity: 1;
-}
-.formulario__grupo-incorrecto .formulario__input{
-    border: 3px solid #bb2929;
+.header h2 {
+	margin: 0;
 }
 
-#Check1:checked{
-    background-color: rgb(155, 34, 34);
-    border: #d1e2e2;
+.form {
+	padding: 30px 40px;	
+}
+.form-controle {
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+	position: relative;
 }
 
-/* ----- -----  Mediaqueries ----- ----- */
-@media screen and (max-width: 800px) {
-	.formulario {
-		grid-template-columns: 1fr;
-	}
+.form-controle label {
+	display: inline-block;
+	margin-bottom: 5px;
+}
 
-	.formulario__grupo-terminos, 
-	.formulario__mensaje,
-	.formulario__grupo-btn-enviar {
-		grid-column: 1;
-	}
+.form-controle input {
+    margin: 10px;
+	border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 10px;
+	width: 100%;
+}
 
-	.formulario__btn {
-		width: 100%;
-	}
+
+.form-controle input:focus {
+	outline: 0;
+	border-color: #777;
+}
+
+.form-controle.success input {
+	border-color: #2ecc71;
+}
+
+.form-controle.error input {
+	border-color: #e74c3c;
+}
+
+.form-controle i {
+	visibility: hidden;
+	position: absolute;
+	top: 40px;
+	right: 10px;
+}
+
+.form-controle.success i.fa-check-circle {
+	color: #2ecc71;
+	visibility: visible;
+}
+
+.form-controle.error i.fa-exclamation-circle {
+	color: #e74c3c;
+	visibility: visible;
+}
+
+.form-controle small {
+	color: #e74c3c;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+}
+
+.form-controle.error small {
+	visibility: visible;
+}
+
+.form button {
+	background-color: #b42732;
+	border: 2px solid #924b35;
+	border-radius: 4px;
+	color: #fff;
+	display: block;
+	font-family: inherit;
+	font-size: 16px;
+	padding: 10px;
+	margin-top: 20px;
+	width: 100%;
 }
