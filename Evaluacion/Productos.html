@@ -30,10 +30,10 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Productos
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <ul class="dropdown-menu" id="submenu" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item" href="Productos.html">Cajas</a></li>
-                  <li><a class="dropdown-item" href="#">Unidades</a></li>
-                  <li><a class="dropdown-item disabled" href="produc-uni.html">Promociones</a></li>
+                  <li><a class="dropdown-item" href="produc-uni.html">Unidades</a></li>
+                  <li><a class="dropdown-item disabled" href="#">Promociones</a></li>
                 </ul>
               </li>
             </ul>
@@ -55,11 +55,11 @@
           <h6>$25.000</h6>
         </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">En la caja vienen 24 mix de dulces junto con 2 bebestibles</li>
-            <!-- Boton del modal -->
-            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modal1">
+            <li class="list-group-item">24 mix de dulces junto con 2 bebestibles</li>
+            <!-- Link para el modal -->
+            <a class="ver-mas link-dark"  data-bs-toggle="modal" data-bs-target="#modal1">
               Ver más
-            </button>
+            </a>
             <!-- Modal -->
             <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modalLabel1" aria-hidden="true">
               <div class="modal-dialog">
@@ -85,13 +85,14 @@
                     </ul>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-dark" onclick="a()" data-bs-dismiss="modal">Cerrar</button>
                   </div>
                 </div>
               </div>
             </div>
- 
-            <li class="list-group-item"><img src="imagenes/icons8-shopping-cart-30.png" alt=""></li>
+            <div>
+              <button class="btn btn-dark" type="button" onclick="">Agregar</button>
+            </div>
           </ul>
       </div>
 
@@ -102,11 +103,11 @@
           <h6>$14.000</h6>
         </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">En la caja vienen 9 dulces variados y 5 pastelitos más 2 bebestibles</li>
-            <!-- Boton del modal -->
-            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modal2">
+            <li class="list-group-item">9 dulces variados y 5 pastelitos más 2 bebestibles</li>
+            <!-- Link para el modal -->
+            <a  class="ver-mas link-dark" data-bs-toggle="modal" data-bs-target="#modal2">
               Ver más
-            </button>
+            </a>
             <!-- Modal -->
             <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modalLabel2" aria-hidden="true">
               <div class="modal-dialog">
@@ -135,7 +136,9 @@
                 </div>
               </div>
             </div>
-            <li class="list-group-item"><img src="imagenes/icons8-shopping-cart-30.png" alt=""></li>
+            <div>
+              <button class="btn btn-dark" type="button" onclick="">Agregar</button>
+            </div>
           </ul>
       </div>
 
@@ -143,14 +146,14 @@
         <img src="imagenes/candybox.jfif" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-text">Mini Candy Box</h5>
-          <h6>$8.000</h6>
+          <small>$8.000</small>
         </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">La caja trae 5 dulces variados, 4 pastelitos y 1 bebestible</li>
-            <!-- Boton del modal -->
-            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modal3">
+            <li class="list-group-item">5 dulces variados, 4 pastelitos y 1 bebestible</li>
+            <!-- link para el modal -->
+            <a class="ver-mas link-dark" data-bs-toggle="modal" data-bs-target="#modal3">
               Ver más
-            </button>
+            </a>
             <!-- Modal -->
             <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modalLabel3" aria-hidden="true">
               <div class="modal-dialog">
@@ -178,7 +181,9 @@
                 </div>
               </div>
             </div>
-            <li class="list-group-item"><img src="imagenes/icons8-shopping-cart-30.png" alt=""></li>
+            <div>
+              <button class="btn btn-dark" type="button" onclick="">Agregar</button>
+            </div>
           </ul>
         </div>
     </div>

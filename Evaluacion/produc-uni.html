@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FondCandy - Registro</title>
     <link rel="icon" href="imagenes/Logo-FondCandy.png">
-     
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -31,83 +34,233 @@
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Productos
                   </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <ul class="dropdown-menu" id="submenu" aria-labelledby="navbarDropdownMenuLink">
                     <li><a class="dropdown-item" href="Productos.html">Cajas</a></li>
                     <li><a class="dropdown-item" href="produc-uni.html">Unidades</a></li>
                     <li><a class="dropdown-item disabled" href="#">Promociones</a></li>
                   </ul>
                 </li>
               </ul>
+              <hr>
               <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                   <a class="nav-link" href="Login.html">Registro</a>
                 </li>
               </ul>
+              <hr>
+                <div class="btn-carro">
+                    <button class="btn btn-dark" id="btn-carro" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="imagenes/icons8-shopping-cart-30.png"></button>
+                </div>
+              
             </div>
           </div>
         </nav>
     </header>
 
-    <div>
-        <div class="contenido-index">
-            <div class="card-index card col-4 col-md-3 col-lg-2">
-              <a href=""><img src="imagenes/collac.jfif" class="card-img-top" alt="..."></a>
-              <div class="card-body">
-                <h5 class="card-title">Collac</h5>
-                <p class="card-text">1 bolsa $2.500</p>
-              </div>
-            </div>
-            <div class="card-index card col-4 col-md-3 col-lg-2" >
-              <a href=""><img src="imagenes/m&m.jfif" class="card-img-top" alt="..."></a>
-              <div class="card-body">
-                <h5 class="card-title">M&M</h5>
-                <p class="card-text">2 tarro $4.600</p>
-              </div>
-            </div>
-            <div class="card-index card col-4 col-md-3 col-lg-2" >
-              <a href=""><img src="imagenes/snickers.jpg" class="card-img-top" alt="..."></a>
-              <div class="card-body">
-                <h5 class="card-title">Snikers</h5>
-                <p class="card-text">Docena $12.000</p>
-              </div>
-            </div>
-            <div class="card-index card col-4 col-md-3 col-lg-2" >
-              <a href=""><img src="imagenes/muffins.jfif" class="card-img-top" alt="..."></a>
-              <div class="card-body">
-                <h5 class="card-title">Cupcakes</h5>
-                <p class="card-text">Docena $15.000</p>
-              </div>
-            </div>
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrito de compras</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">i</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Precio</th>
+                </tr>
+            </thead>
+            <tbody id="carro-produto">
+                <tr>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="d-grid gap-2">
+            <p>Total: $<span id="carro-precio">0</span></p>
+            <button class="btn btn-success btn-lg" type="button">
+                Comprar
+            </button>
         </div>
-        <div class="card-index card col-4 col-md-3 col-lg-2" >
-            <a href=""><img src="imagenes/gomitasTrolli.jpg" class="card-img-top" alt="..."></a>
-            <div class="card-body">
-              <h5 class="card-title">Gomitas Trolli</h5>
-              <p class="card-text">1 bolsa $4.500</p>
-            </div>
-        </div>
-        <div class="card-index card col-4 col-md-3 col-lg-2" >
-            <a href=""><img src="imagenes/alfajores.jpg" class="card-img-top" alt="..."></a>
-            <div class="card-body">
-              <h5 class="card-title">Alfajores</h5>
-              <p class="card-text">Docena $8.500</p>
-            </div>
-        </div>
-        <div class="card-index card col-4 col-md-3 col-lg-2" >
-            <a href=""><img src="imagenes/galletas.jpg" class="card-img-top" alt="..."></a>
-            <div class="card-body">
-              <h5 class="card-title">Galletas</h5>
-              <p class="card-text">1 bolsa $4.500</p>
-            </div>
-        </div>
-        <div class="card-index card col-4 col-md-3 col-lg-2" >
-            <a href=""><img src="imagenes/pie-limon.jfif" class="card-img-top" alt="..."></a>
-            <div class="card-body">
-              <h5 class="card-title">Pie de Limón</h5>
-              <p class="card-text">$11.500</p>
-            </div>
-        </div>
+      </div>
+
     </div>
+
+    </div>
+
+    <main>
+        <div class="contenido-u">
+            <div class="card-u card col-4 col-md-3 col-lg-2">
+                <div class="col">
+                    <div 
+                        id="producto-1"
+                        data-nombre = "Collac"
+                        data-precio = "2500"
+                        >
+                    <img src="imagenes/collac.jfif" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Collac</h5>
+                        <small class="card-text">1 bolsa</small>
+                        <small class="">$2500</small>
+                            <div>
+                                <button class="btn btn-dark" type="button" onclick="agregar(1)">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-u card col-4 col-md-3 col-lg-2">
+                <div class="col">
+                    <div 
+                        id="producto-2"
+                        data-img = "imagenes/m&m.jfif"
+                        data-nombre = "M&M"
+                        data-precio = "4600"
+                    >
+                        <a href=""><img src="imagenes/m&m.jfif" class="card-img-top" alt="..."></a>
+                        <div class="card-body">
+                            <h5 class="card-title">M&M</h5>
+                            <small class="card-text">1 tarro</small>
+                            <small>$4600</small>
+                            <div>
+                                <button class="btn btn-dark" type="button" onclick="agregar(2)">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            
+            <div class="card-u card col-4 col-md-3 col-lg-2">
+                <div class="col">
+                    <div
+                        id="producto-3"
+                        data-img = "imagenes/snickers.jpg"
+                        data-nombre = "Snickers"
+                        data-precio = "2500"
+                    >
+                        <a href=""><img src="imagenes/snickers.jpg" class="card-img-top" alt="..."></a>
+                        <div class="card-body">
+                            <h5 class="card-title">Snickers</h5>
+                            <small class="card-text">Docena</small>
+                            <small>$12000</small>
+                                <div>
+                                    <button class="btn btn-dark" type="button" onclick="agregar(3)">Agregar</button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="card-u card col-4 col-md-3 col-lg-2" >
+                <div class="col">
+                    <div 
+                        id="producto-4"
+                        data-img="imagenes/muffins.jfif"
+                        data-nombre="Cupcakes"
+                        data-precio="15000"
+                    >
+                        <a href=""><img src="imagenes/muffins.jfif" class="card-img-top" alt="..."></a>
+                        <div class="card-body">
+                            <h5 class="card-title">Cupcakes</h5>
+                            <small class="card-text">Docena</small>
+                            <small>$15000</small>
+                            <div>
+                                <button class="btn btn-dark" type="button" onclick="agregar(4)">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-u card col-4 col-md-3 col-lg-2" >
+                <div class="col">
+                    <div
+                        id="producto-5"
+                        data-img="imagenes/gomitasTrolli.jpg"
+                        data-nombre="Gomitas Trolli"
+                        data-precio="4500"
+                    >
+                        <a href=""><img src="imagenes/gomitasTrolli.jpg" class="card-img-top" alt="..."></a>
+                        <div class="card-body">
+                            <h5 class="card-title">Gomitas Trolli</h5>
+                            <small class="card-text">1 bolsa</small>
+                            <small>$4500</small>
+                            <div>
+                                <button class="btn btn-dark" type="button" onclick="agregar(5)">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-u card col-4 col-md-3 col-lg-2" >
+                <div class="col">
+                    <div 
+                        id="producto-6"
+                        data-img="imagenes/alfajores.jpg"
+                        data-nombre="Alfajores"
+                        data-precio="8500"
+                    >
+
+                        <a href=""><img src="imagenes/alfajores.jpg" class="card-img-top" alt="..."></a>
+                        <div class="card-body">
+                            <h5 class="card-title">Alfajores</h5>
+                            <small class="card-text">Docena</small>
+                            <small>$8500</small>
+                            <div>
+                                <button class="btn btn-dark" type="button" onclick="agregar(6)">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-u card col-4 col-md-3 col-lg-2" >
+                <div class="col">
+                    <div 
+                        id="producto-7"
+                        data-img="imagenes/galletas.jpg"
+                        data-nombre="Galletas"
+                        data-precio="4500"
+                    >
+                        <a href=""><img src="imagenes/galletas.jpg" class="card-img-top" alt="..."></a>
+                        <div class="card-body">
+                            <h5 class="card-title">Galletas</h5>
+                            <small class="card-text">1 bolsa</small>
+                            <small>$4500</small>
+                            <div>
+                                <button class="btn btn-dark" type="button" onclick="agregar(7)">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-u card col-4 col-md-3 col-lg-2" >
+                <div class="col">
+                    <div 
+                        id="producto-8"
+                        data-img="imagenes/pie-limon.jfif"
+                        data-nombre="Pie de Limón"
+                        data-precio="11500"
+                    >
+                        <a href=""><img src="imagenes/pie-limon.jfif" class="card-img-top" alt="..."></a>
+                        <div class="card-body">
+                           <h5 class="card-title">Pie de Limón</h5>
+                            <small>$11500</small>
+                            <div>
+                                <button class="btn btn-dark" type="button" onclick="agregar(8)">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <footer class="pie-pagina">
         <p class="fw-bold fst-italic text-light">
@@ -118,7 +271,9 @@
             <img src="imagenes/icons8-copyright-24.png" alt="copyright"> FondCandy_CL
             <br> <a href="TermyCond.html" class="link-light" id="terminosCondiciones">Terminos y condiciones</a>  
         </p>
-      </footer>
-      <script src="js/bootstrap.bundle.min.js"></script>
+    </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>  
+
 </body>
 </html>

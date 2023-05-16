@@ -20,6 +20,14 @@
 .dropdown-item{
     color: #fff;
 }
+#btn-carro{
+    width: auto;
+    margin: 2px;
+    padding-right: 20px;
+}
+.btn-carro{
+    margin-left: 1rem;
+}
 .nav-link{
     font-weight: bold;
     color: #fff;
@@ -39,10 +47,10 @@
     padding: 4%;
     text-align: center;
 }
-.card-index{
+.card-u{
     display: inline-block;
     margin: 4%;
-    border-radius: 20px;
+    border-radius: 15px;
 }
 /*SOBRE NOSOTROS*/
 .contenedor3{
@@ -70,18 +78,26 @@
     margin-left: auto;
     margin-right: auto;
 }
+.contenido-u{
+    display: inline;
+}
 .card-producto{
+    border-radius: 10px;
     margin: 8%;
     display: inline-block;
     border-color: rgb(166, 203, 235);
 }
 .card-img-top{
     height: 9rem;
+    border-radius: 10px;
+}
+.ver-mas{
+    cursor: pointer;
 }
 .btn{
+    margin: 1rem;
     background-color: rgb(155, 34, 34);
-    margin-left: auto;
-    margin-right: auto;
+    align-items: center;
     width: 80%;
 }
 .btn:hover{
@@ -129,6 +145,7 @@
 
 
 .contenido2{
+    border: #f7f7f7 solid;
     margin: 1rem;
     align-items: center;
     margin-left: 20%;
@@ -140,6 +157,7 @@
 }
 
 .header {
+    text-align: center;
 	border-bottom: 1px solid #f0f0f0;
 	background-color: #f7f7f7;
 	padding: 20px 40px;
