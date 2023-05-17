@@ -2,8 +2,8 @@
 /* CARRO DE COMPRAS */
 var lista_productos = [];
 
-if (localStorage.getItem("PRODUCTOS")) {
-    lista_productos = JSON.parse(localStorage.getItem("PRODUCTOS")) || [];
+if (localStorage.getItem("PRODUCTOS-FondCandy")) {
+    lista_productos = JSON.parse(localStorage.getItem("PRODUCTOS-FondCandy")) || [];
 }
 
 function agregar(id){
@@ -43,8 +43,4 @@ function llenar_carro() {
     });
     $("#carro-producto").append(texto);
     $("#carro-precio").html(total);
-}
-
-function elimiarProducto() {
-    
 }
