@@ -18,6 +18,8 @@ function checkInputs() {
 	const passwordValue = password.value;
 	const password2Value = password2.value;
 	
+	var bandera = false;
+
 	if(usuarioValue === '') {
 		setErrorFor(usuario, '⚠ Debe ingresar un usuario');
 	} else if (!isUser(usuarioValue)) {
@@ -49,7 +51,7 @@ function checkInputs() {
 		setErrorFor(password2, '⚠ Las contraseñas no coinciden');
 	} else{
 		setSuccessFor(password2);
-	}
+	} 
 }
 
 function setErrorFor(input, message) {
@@ -73,47 +75,4 @@ function isEmail(email) {
 }
 function ispassword(password) {
     return /^.{4,12}$/.test(password);
-}
-
-
-/* CARRO DE COMPRAS */
-var lista_productos = [];
-
-if (localStorage.getItem('PRODUCTOS')) {
-    lista_productos = JSON.parse(localStorage.getItem('PRODUCTOS')) || [];
-}
-
-function agregar(id){
-    var producto = $('#producto-'+ id);
-
-    var p = {
-        id: id,
-        nombre: producto.data('nombre'),
-        precio: producto.data('precio')
-    };
-    lista_productos.push(p);
-
-    localStorage.setItem('PRODUCTOS', JSON.stringify(lista_productos));
-
-    llenar_carro();
-}
-
-function llenar_carro() {
-    $('#carro-producto').html('');
-    var texto = '';
-    var total = 0;
-
-    lista_productos.forEach(producto => {
-        texto = texto + `
-            <tr>
-                <td><img src="${producto.img}" width="50px"></td>
-                <td>${producto.nombre}</td>
-                <td>${producto.nombre}</td>
-            </tr>
-        `;
-
-        total += producto.precio;
-    });
-    $('#carro-producto').append(texto);
-    $('#carro-precio').html(total);
 }

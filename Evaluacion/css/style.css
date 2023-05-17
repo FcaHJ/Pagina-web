@@ -12,7 +12,15 @@
     background-color: rgb(155, 34, 34);
 }
 #navbarNav{
+    font-family:'Courier New', Courier, monospace;
     color: white;
+}
+#reg{
+    border: #b42732 solid 1px;
+    border-radius: 5px;
+}
+.nav-item{
+    padding-right: 10px;
 }
 #submenu{
     background-color: rgb(189, 53, 53);
@@ -47,10 +55,28 @@
     padding: 4%;
     text-align: center;
 }
-.card-u{
+.card-u-index{
     display: inline-block;
-    margin: 4%;
+    margin-top: 1rem;
+    margin-bottom: 4%;
+    margin-right: 4%;
+    margin-left: 4%;
     border-radius: 15px;
+}
+.vermas-index{
+    margin-top: 3rem;
+    margin-right: 2rem;
+    margin-bottom: 0;
+    text-align: right;
+}
+.ver-mas-index{
+    border: rgb(190, 117, 109) solid 2px;
+    padding: 3px;
+    margin-bottom: 0;
+    color: #80050f;
+}
+.ver-mas-index:hover{
+    color: #55060c;
 }
 /*SOBRE NOSOTROS*/
 .contenedor3{
@@ -81,11 +107,20 @@
 .contenido-u{
     display: inline;
 }
-.card-producto{
-    border-radius: 10px;
-    margin: 8%;
+.card-u{
     display: inline-block;
-    border-color: rgb(166, 203, 235);
+    margin: 4%;
+    border-radius: 15px;
+}
+.card-producto{
+    display: inline-block;
+    padding: 30px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    border-radius: 10px;
+    border-color: rgb(219, 166, 235);
 }
 .card-img-top{
     height: 9rem;

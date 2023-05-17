@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.111.3">
     <title>FondCandy - Productos</title>
     <link rel="icon" href="imagenes/Logo-FondCandy.png">
 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -39,152 +45,215 @@
             </ul>
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="Login.html">Registro</a>
+                <a class="nav-link" id="reg" href="Login.html">Registro</a>
               </li>
             </ul>
+            <hr>
+            <div class="btn-carro">
+              <button class="btn btn-dark" id="btn-carro" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="imagenes/icons8-shopping-cart-30.png"></button>
+            </div>
           </div>
         </div>
       </nav>
     </header>
 
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrito de compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+          <table class="table">
+              <thead>
+                  <tr>
+                      <th scope="col">i</th>
+                      <th scope="col">Producto</th>
+                      <th scope="col">Precio</th>
+                  </tr>
+              </thead>
+              <tbody id="carro-producto">
+                  <tr>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                  </tr>
+              </tbody>
+          </table>
+          <div class="d-grid gap-2">
+              <p>Total: $<span id="carro-precio">0</span></p>
+              <button class="btn btn-success btn-lg" type="button">
+                  Comprar
+              </button>
+          </div>
+      </div>
+    </div>
+
     <div class="contenedor">
-      <div id="division" class="card-producto card col-4 col-md-3 col-lg-2" style=" display: inline-block;">
-        <img src="imagenes/candybox.jfif" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-text"> Ultra Candy Box</h5>
-          <h6>$25.000</h6>
-        </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">24 mix de dulces junto con 2 bebestibles</li>
-            <!-- Link para el modal -->
-            <a class="ver-mas link-dark"  data-bs-toggle="modal" data-bs-target="#modal1">
-              Ver más
-            </a>
-            <!-- Modal -->
-            <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modalLabel1" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel1">Ultra Candy Box</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <img src="imagenes/candybox.jfif" alt="Candy Box" class="imagen">
-                    <ul class="lista">
-                        <li>2 Sobres de gomitas</li>
-                        <li>2 Super 8</li>
-                        <li>2 Kit Kat</li>
-                        <li>2 M&M's</li>
-                        <li>5 Pasteles variados</li>
-                        <li>2 Collac</li>
-                        <li>1 Capri</li>
-                        <li>1 Galleta</li>
-                        <li>2 Snikers</li>
-                        <li>3 Dulces chilenos</li>
-                        <li>2 Bebestibles</li>
-                    </ul>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-dark" onclick="a()" data-bs-dismiss="modal">Cerrar</button>
+      <div id="division" class="card-producto card col-4 col-md-3 col-lg-3">
+        <div class="col">
+          <div 
+              id="producto-9"
+              data-img="imagenes/candybox.jfif"
+              data-nombre = "Collac"
+              data-precio = "25000"
+          >
+            <img src="imagenes/candybox.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-text"> Ultra Candy Box</h5>
+              <small>$25.000</small>
+            </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">24 mix de dulces junto con 2 bebestibles</li>
+                <!-- Link para el modal -->
+                <a class="ver-mas link-dark"  data-bs-toggle="modal" data-bs-target="#modal1">
+                  Ver más
+                </a>
+                <!-- Modal -->
+                <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modalLabel1" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabel1">Ultra Candy Box</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <img src="imagenes/candybox.jfif" alt="Candy Box" class="imagen">
+                        <ul class="lista">
+                            <li>2 Sobres de gomitas</li>
+                            <li>2 Super 8</li>
+                            <li>2 Kit Kat</li>
+                            <li>2 M&M's</li>
+                            <li>5 Pasteles variados</li>
+                            <li>2 Collac</li>
+                            <li>1 Capri</li>
+                            <li>1 Galleta</li>
+                            <li>2 Snikers</li>
+                            <li>3 Dulces chilenos</li>
+                            <li>2 Bebestibles</li>
+                        </ul>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
+              </ul>
+              <div>
+                <button class="btn btn-dark" type="button" onclick="agregar(11)">Agregar</button>
               </div>
+          </div>
+      </div>
+    </div>
+
+      <div id="division" class="card-producto card col-4 col-md-3 col-lg-3">
+        <div class="col">
+            <div 
+              id="producto-10"
+              data-img="imagenes/candybox.jfif"
+              data-nombre="Bloom Candy Box"
+              data-precio="14000"
+            >
+            <img src="imagenes/candybox.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-text">Bloom Candy Box</h5>
+              <small>$14.000</small>
             </div>
-            <div>
-              <button class="btn btn-dark" type="button" onclick="">Agregar</button>
-            </div>
-          </ul>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">9 dulces variados y 5 pastelitos más 2 bebestibles</li>
+                <!-- Link para el modal -->
+                <a  class="ver-mas link-dark" data-bs-toggle="modal" data-bs-target="#modal2">
+                  Ver más
+                </a>
+                <!-- Modal -->
+                <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modalLabel2" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabel2">Bloom Candy Box</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <img src="imagenes/candybox.jfif" alt="Candy Box" class="imagen">
+                        <ul class="lista">
+                            <li>2 Sobres de gomitas</li>
+                            <li>1 Super 8</li>
+                            <li>1 Capri</li>
+                            <li>1 Kit Kat</li>
+                            <li>5 Pasteles variados</li>
+                            <li>2 M&M's</li>
+                            <li>1 Collac</li>
+                            <li>1 Snikers</li>
+                            <li>2 Bebestibles</li>
+                        </ul>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ul>
+              <div>
+                <button class="btn btn-dark" type="button" onclick="agregar(11)">Agregar</button>
+              </div>
+          </div>
+        </div>
       </div>
 
-      <div id="division" class="card-producto card col-4 col-md-3 col-lg-2" style="display: inline-block;">
-        <img src="imagenes/candybox.jfif" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-text">Bloom Candy Box</h5>
-          <h6>$14.000</h6>
-        </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">9 dulces variados y 5 pastelitos más 2 bebestibles</li>
-            <!-- Link para el modal -->
-            <a  class="ver-mas link-dark" data-bs-toggle="modal" data-bs-target="#modal2">
-              Ver más
-            </a>
-            <!-- Modal -->
-            <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modalLabel2" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel2">Bloom Candy Box</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <img src="imagenes/candybox.jfif" alt="Candy Box" class="imagen">
-                    <ul class="lista">
-                        <li>2 Sobres de gomitas</li>
-                        <li>1 Super 8</li>
-                        <li>1 Capri</li>
-                        <li>1 Kit Kat</li>
-                        <li>5 Pasteles variados</li>
-                        <li>2 M&M's</li>
-                        <li>1 Collac</li>
-                        <li>1 Snikers</li>
-                        <li>2 Bebestibles</li>
-                    </ul>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+      <div id="division" class="card-producto card col-4 col-md-3 col-lg-3">
+        <div class="col">
+          <div 
+            id="producto-11"
+            data-img="imagenes/candybox.jfif"
+            data-nombre="Mini Candy Box"
+            data-precio="8000"
+            >
+          
+            <img src="imagenes/candybox.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-text">Mini Candy Box</h5>
+              <small>$8.000</small>
+            </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">5 dulces variados, 4 pastelitos y 1 bebestible</li>
+                <!-- link para el modal -->
+                <a class="ver-mas link-dark" data-bs-toggle="modal" data-bs-target="#modal3">
+                  Ver más
+                </a>
+                <!-- Modal -->
+                <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modalLabel3" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabel2">Mini Candy Box</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <img src="imagenes/candybox.jfif" alt="Candy Box" class="imagen">
+                        <ul class="lista">
+                            <li>1 Sobres de gomitas</li>
+                            <li>1 capri</li>
+                            <li>1 Kit Kat</li>
+                            <li>1 M&M's</li>
+                            <li>3 Pasteles variados</li>
+                            <li>1 Collac</li>
+                            <li>1 Snikers</li>
+                            <li>1 Bebestible</li>
+                        </ul>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
+              </ul>
+              <div>
+                <button class="btn btn-dark" type="button" onclick="agregar(11)">Agregar</button>
               </div>
             </div>
-            <div>
-              <button class="btn btn-dark" type="button" onclick="">Agregar</button>
-            </div>
-          </ul>
-      </div>
-
-      <div id="division" class="card-producto card col-4 col-md-3 col-lg-2" style=" display: inline-block;">
-        <img src="imagenes/candybox.jfif" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-text">Mini Candy Box</h5>
-          <small>$8.000</small>
-        </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">5 dulces variados, 4 pastelitos y 1 bebestible</li>
-            <!-- link para el modal -->
-            <a class="ver-mas link-dark" data-bs-toggle="modal" data-bs-target="#modal3">
-              Ver más
-            </a>
-            <!-- Modal -->
-            <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modalLabel3" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel2">Mini Candy Box</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <img src="imagenes/candybox.jfif" alt="Candy Box" class="imagen">
-                    <ul class="lista">
-                        <li>1 Sobres de gomitas</li>
-                        <li>1 capri</li>
-                        <li>1 Kit Kat</li>
-                        <li>1 M&M's</li>
-                        <li>3 Pasteles variados</li>
-                        <li>1 Collac</li>
-                        <li>1 Snikers</li>
-                        <li>1 Bebestible</li>
-                    </ul>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <button class="btn btn-dark" type="button" onclick="">Agregar</button>
-            </div>
-          </ul>
+          </div>
         </div>
     </div>
 
@@ -198,6 +267,11 @@
         <br> <a href="TermyCond.html" class="link-light" id="terminosCondiciones">Terminos y condiciones</a>  
       </p>
     </footer>
+
+    <script src="js/carrito.js"></script>
+    <script src="js/script.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>  
+
 </body>
 </html>
